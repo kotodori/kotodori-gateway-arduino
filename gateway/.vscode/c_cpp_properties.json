@@ -1,0 +1,23 @@
+{
+  "env": {},
+  "configurations": [
+    {
+      "name": "default",
+      "includePath": [
+        "${workspaceFolder}"
+      ],
+      "browse": {
+        "path": [
+          "${workspaceFolder}",
+          "${settings:arduino.path}/tools",
+          "${settings:arduino.path}/hardware",
+          "${settings:arduino.path}/libraries"
+        ]
+      },
+      "forcedInclude": [
+        "${settings:arduino.path}/hardware/arduino/avr/cores/arduino/Arduino.h"
+      ]
+    }
+  ],
+  "version": 4
+}
