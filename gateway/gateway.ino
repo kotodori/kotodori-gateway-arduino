@@ -12,7 +12,7 @@ const byte DATA_IN_PIN = 11;
 const byte DATA_IN_PORT = _BV(3);
 
 const short MSB_SHORT = 0x8000;
-const short TO_SEND = 0xAAA0;
+const short TO_SEND = 0xF00A;
 
 volatile short bufferToSend = 0;
 volatile short finalCount = 0;
@@ -43,11 +43,12 @@ void latchInterrupted()
 
   PORTB |= DATA_OUT_PORT;
   bufferToSend = ~TO_SEND;
-
-  while (PORTB & LATCH_PORT) {
-  }
-
   sendOneBitToSnes();
+
+  //while (PORTB & LATCH_PORT) {
+  //}
+
+  //sendOneBitToSnes();
 }
 
 void clockInterrupted()
