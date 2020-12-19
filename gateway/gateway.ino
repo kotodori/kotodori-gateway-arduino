@@ -11,13 +11,12 @@ const byte DATA_OUT_PORT = _BV(4);
 const byte DATA_IN_PIN = 11;
 const byte DATA_IN_PORT = _BV(3);
 
-const short MSB_SHORT = 0x80;
-const short TO_SEND = 0x0800;
+const short MSB_SHORT = 0x8000;
+const short TO_SEND = 0xAAA0;
 
 volatile short bufferToSend = 0;
-volatile int count = 0;
-volatile int finalCount = 0;
-volatile bool hoge = false;
+volatile short finalCount = 0;
+volatile short count = 0;
 
 void setup()
 {
@@ -32,7 +31,7 @@ void setup()
 
 void loop()
 {
-  Serial.println(finalCount);
+  //Serial.println(finalCount);
 }
 
 void latchInterrupted()
